@@ -1,6 +1,8 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import classes from "./FlowerData.module.css";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { CartAction } from "../Store/CartSlice";
 
 const flowers = [
   {
@@ -290,6 +292,10 @@ const flowers = [
 ];
 
 function FlowerData() {
+  const dispatch = useDispatch();
+  const addHandler = (fl) => {
+    dispatch(CartAction.add({ ...fl, quantity: 1 }));
+  };
   return (
     <Container>
       <Row xs={2} lg={4} md={4}>
@@ -303,7 +309,9 @@ function FlowerData() {
                   <Card.Text>Price:${fl.price}</Card.Text>
                   <Card.Text>Color:{fl.color}</Card.Text>
                 </Link>
-                <Button variant="primary">Add to cart</Button>
+                <Button variant="primary" onClick={() => addHandler(fl)}>
+                  Add to cart
+                </Button>
               </Card.Body>
             </Card>
           </Col>

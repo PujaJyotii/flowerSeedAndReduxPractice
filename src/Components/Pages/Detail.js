@@ -1,15 +1,29 @@
 import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import classes from "./Detail.module.css";
+import { useDispatch } from "react-redux";
+import { CartAction } from "../Store/CartSlice";
 
 function Detail(props) {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const flowerData = props.flower.find((item) => item.id === parseInt(id));
-  console.log(flowerData);
   const { name, extraImages, price, description, reviews, color } = flowerData;
   if (!flowerData) {
     return <div>Flower not found</div>;
   }
+
+  const addHandler = () => {
+    dispatch(
+      CartAction.add({
+        id: id,
+        name: name,
+        price: price,
+        color: color,
+        quantity: 1,
+      })
+    );
+  };
   return (
     <Container>
       <Row>
@@ -49,7 +63,9 @@ function Detail(props) {
               ) : (
                 <p>No reviews yet.</p>
               )}
-              <Button variant="primary">Add to Cart</Button>
+              <Button variant="primary" onClick={addHandler}>
+                Add to Cart
+              </Button>
             </Card.Body>
           </Card>
         </Col>

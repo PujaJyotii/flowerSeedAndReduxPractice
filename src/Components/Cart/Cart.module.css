@@ -1,0 +1,46 @@
+.bigger {
+  background: rgb(133, 133, 214);
+}
+
+.ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ul li {
+  border: 3px solid blue;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 3px;
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn1 {
+  border: 2px solid black;
+  padding: 2px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.quantity {
+  font-weight: bolder;
+  padding: 2px;
+}
+.btn2 {
+  border: 2px solid black;
+  padding: 2px;
+  cursor: pointer;
+  font-weight: bolder;
+}
