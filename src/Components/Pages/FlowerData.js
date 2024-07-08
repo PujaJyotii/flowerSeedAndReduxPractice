@@ -297,7 +297,7 @@ function FlowerData() {
     dispatch(CartAction.add({ ...fl, quantity: 1 }));
   };
   return (
-    <Container>
+    <Container className={classes.whole}>
       <Row xs={2} lg={4} md={4}>
         {flowers.map((fl) => (
           <Col key={fl.id}>

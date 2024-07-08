@@ -13,6 +13,9 @@ function Cart({ show, handleClose }) {
   const reduceHandler = (fl) => {
     dispatch(CartAction.reduce(fl));
   };
+  let totalAmount = output.reduce((total, fl) => {
+    return total + fl.quantity * fl.price;
+  }, 0);
   return (
     <div
       className="modal show"
@@ -55,6 +58,9 @@ function Cart({ show, handleClose }) {
         </Modal.Body>
 
         <Modal.Footer>
+          <div style={{ fontWeight: "bolder" }}>
+            Total Amount : ${totalAmount}
+          </div>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

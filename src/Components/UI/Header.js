@@ -20,7 +20,7 @@ function Header() {
   return (
     <>
       <Cart show={show} handleClose={handleClose} />
-      <Navbar data-bs-theme="dark" className={classes.deco}>
+      <Navbar fixed="top" data-bs-theme="dark" className={classes.deco}>
         <Container>
           <Navbar.Brand as={Link} to="/">
             Whispering Meadows
