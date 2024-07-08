@@ -1,0 +1,14 @@
+.deco img {
+  width: 100%;
+  height: 400px;
+  margin: 20px;
+}
+
+.card {
+  width: 90%;
+  margin: 20px;
+  color: white;
+  background: blue;
+  opacity: 0.95;
+  height: 400px;
+}

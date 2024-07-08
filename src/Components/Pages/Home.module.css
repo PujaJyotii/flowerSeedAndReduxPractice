@@ -1,0 +1,13 @@
+.card {
+  margin: 20px auto;
+  max-width: 60%;
+  background: blue;
+  opacity: 0.9;
+  color: white;
+}
+
+.header {
+  font-family: cursive;
+  font-size: larger;
+  text-align: center;
+}

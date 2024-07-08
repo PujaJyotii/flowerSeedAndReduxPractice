@@ -1,0 +1,14 @@
+.deco {
+  background: blue;
+  height: 80px;
+  opacity: 0.75;
+}
+
+.btn {
+  display: flex;
+  justify-content: end;
+}
+
+.btn button {
+  background: rgb(0, 0, 128);
+}
